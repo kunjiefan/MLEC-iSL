@@ -29,9 +29,7 @@ def init_argparse():
     parser.add_argument('--cell_specific_feats', type=lambda s:[item for item in s.split("%") if item != ""], 
                             default=["multi_omics"], help="cell specific features")
 
-    parser.add_argument('--model', type=str, default="Net", help="model type")
     parser.add_argument('--cell_specific_flag', type=int, default=1, help="whether to use cell-specific features")
-    parser.add_argument('--transformer_flag', type=int, default=0, help="whether to include transformer")
     parser.add_argument('--GT_flag', type=int, default=1, help="whether to include graph transformer")
 
     parser.add_argument('--LR', type=float, default=0.00005, help="learning rate")
