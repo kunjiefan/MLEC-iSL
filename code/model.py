@@ -5,9 +5,7 @@ import torch.nn as nn
 import torch_geometric.transforms as T
 import torch.nn.functional as F
 from torch.autograd import Variable
-from torch_geometric.nn import GCNConv, GAE, VGAE
-from torch_geometric.nn import GATConv, GATv2Conv
-from torch_geometric.nn import ResGatedGraphConv, TransformerConv
+from torch_geometric.nn import GCNConv, GATConv, GATv2Conv 
 
 class GCN(torch.nn.Module):
     def __init__(self, in_channels, hidden_channels, out_channels):
