@@ -22,7 +22,7 @@ We use `torch` to build our deep learning model, and **PyG (PyTorch Geometric)**
 
 ## Download data
 
-In order to run our model, you should first download data from [this link](), which contains features and two SL datasets (K562 and Jurkat cell lines), and put these files into a folder named **data**. 
+In order to run our model, you should first download data from [this link](https://data.mendeley.com/datasets/7shf34snd3/1), which contains features and two SL datasets (K562 and Jurkat cell lines), and put these files into a folder named **data**. 
 
 There are two types of features used in our model: omics features and biological networks. For omics features, there are two CCLE profiles (expression and essentiality) and four cell-specific features (expression, essentiality, mutation and copy number) considered in our model. As for network features, we incorporate physical protein-protein interaction (PPI) network, genetic interaction network and pathway network.
 
