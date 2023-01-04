@@ -1,8 +1,10 @@
 # MVGT-iSL
- A graph transformer model for individual sample-specific synthetic lethality prediction
+ **A graph transformer model for individual sample-specific synthetic lethality prediction**
 
-THis is the original code for our work "MVGT-iSL: a multi-view graph transformer model for individual sample synthetic lethality prediction". Our model, MVGT-iSL, is an end-to-end deep learning model, composed of four modules: gene feature encoder, multi-view graph encoder, transformer encoder and predictor. Predictive performance benefited from use of the transformer encoder as well as SL connectivity as an intermediate learning objective, and our method outperformed state-of-the-art deep-learning methods by a large margin. Here shows the entire model architecture:
-![](model.png)
+This is the original code for our work "MVGT-iSL: a multi-view graph transformer model for individual sample synthetic lethality prediction". Our model, MVGT-iSL, is an end-to-end deep learning model, composed of four modules: gene feature encoder, multi-view graph encoder, transformer encoder and predictor. Predictive performance benefited from use of the transformer encoder as well as SL connectivity as an intermediate learning objective, and our method outperformed state-of-the-art deep-learning methods by a large margin. 
+
+Here shows the entire model architecture:
+![](model.tif)
 
 ## Requirements
 
