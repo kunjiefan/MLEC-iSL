@@ -13,7 +13,7 @@ from scipy.stats.stats import pearsonr
 from utils import *
 from model import *
 
-
+# define required hyper-parameters here
 def init_argparse():
     parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
