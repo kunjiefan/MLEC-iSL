@@ -35,7 +35,6 @@ def generate_unique_samples(cell_name):
     GI_indexs = np.triu_indices(num_genes, k=1)
     GI_values = GI_matrix[GI_indexs]
     
-    # get corresponding gene names
     row_indexs = GI_indexs[0]
     col_indexs = GI_indexs[1]
     row_genes = df.index[row_indexs]
