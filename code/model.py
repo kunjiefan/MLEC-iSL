@@ -54,18 +54,18 @@ class MultiHeadAttention(nn.Module):
 
     def forward(self, input_Q, input_K, input_V, attn_mask, attn_bias=None):
         residual, batch_size = input_V, input_V.size(0)
-        # (B, S, D) -proj-> (B, S, D_new) -split-> (B, S, H, W) -trans-> (B, H, S, W)
-        Q = self.W_Q(input_Q).view(batch_size, -1, self.n_heads, self.embed_size).transpose(1,2)  # Q: [batch_size, n_heads, len_q, embed_size]
-        K = self.W_K(input_K).view(batch_size, -1, self.n_heads, self.embed_size).transpose(1,2)  # K: [batch_size, n_heads, len_k, embed_size]
-        V = self.W_V(input_V).view(batch_size, -1, self.n_heads, self.embed_size).transpose(1,2)  # V: [batch_size, n_heads, len_v(=len_k), embed_size]
 
-        attn_mask = attn_mask.unsqueeze(1).repeat(1, self.n_heads, 1, 1) # attn_mask : [batch_size, n_heads, seq_len, seq_len]
+        Q = self.W_Q(input_Q).view(batch_size, -1, self.n_heads, self.embed_size).transpose(1,2)  
+        K = self.W_K(input_K).view(batch_size, -1, self.n_heads, self.embed_size).transpose(1,2)
+        V = self.W_V(input_V).view(batch_size, -1, self.n_heads, self.embed_size).transpose(1,2)
+
+        attn_mask = attn_mask.unsqueeze(1).repeat(1, self.n_heads, 1, 1)
 
         # context: [batch_size, n_heads, len_q, d_v], attn: [batch_size, n_heads, len_q, len_k]
         context, attn = ScaledDotProductAttention(self.embed_size)(Q, K, V, attn_mask, attn_bias=attn_bias)
         
-        context = context.transpose(1, 2).reshape(batch_size, -1, self.n_heads * self.embed_size) # context: [batch_size, len_q, n_heads * embed_size]
-        output = self.fc(context) # [batch_size, len_q, embed_size]
+        context = context.transpose(1, 2).reshape(batch_size, -1, self.n_heads * self.embed_size)
+        output = self.fc(context)
         # add residual
         output = self.layerNorm(output + residual)
         return output, attn
