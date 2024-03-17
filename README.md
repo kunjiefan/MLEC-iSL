@@ -1,7 +1,7 @@
-# MVGT-iSL
- **A graph transformer model for individual sample-specific synthetic lethality prediction**
+# MLEC-iSL
+ **A multi-layer encoder model for individual sample-specific synthetic lethality prediction**
 
-This is the original code for our work "Improving the generalizability of synthetic lethality prediction with graph transformer". Our model, MVGT-iSL, is an end-to-end deep learning model, composed of four modules: gene feature encoder, multi-view graph encoder, transformer encoder and predictor. Predictive performance benefited from use of the transformer encoder as well as SL connectivity as an intermediate learning objective, and our method outperformed state-of-the-art deep-learning methods by a large margin. 
+This is the original code for our work "Graph transformer guided synthetic lethality prediction". Our model, MLEC-iSL, is an end-to-end deep learning model, composed of four modules: gene feature encoder, multi-view graph encoder, transformer encoder and predictor. Predictive performance benefited from use of the transformer encoder as well as SL connectivity as an intermediate learning objective, and our method outperformed state-of-the-art deep-learning methods by a large margin. 
 
 Here shows the entire model architecture:
 ![](model.jpg)
@@ -19,6 +19,11 @@ We use `torch` to build our deep learning model, and **PyG (PyTorch Geometric)**
 - tqdm
 - torch
 - torch-geometric
+
+Alternatively, the packages could be installed through requirements.txt as:
+```
+pip install -r requirements.txt
+```
 
 ## Download data
 
