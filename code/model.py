@@ -149,9 +149,9 @@ class Graph_trans(nn.Module):
         
         return z
 
-class MVGT_iSL(nn.Module):
+class MLEC_iSL(nn.Module):
     def __init__(self, hidden_size, embed_size, n_heads, n_layers, num_CCLE=4, num_network=3, cell_specific_flag=True, GT_flag=True, task="connectivity"):
-        super(MVGT_iSL, self).__init__()
+        super(MLEC_iSL, self).__init__()
         self.num_CCLE = num_CCLE
         self.num_network = num_network
         self.cell_specific_flag = cell_specific_flag

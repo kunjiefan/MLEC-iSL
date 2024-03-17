@@ -162,7 +162,7 @@ if __name__ == "__main__":
     # load model
     num_CCLE = len(args.global_tabular_feats)
     num_network = len(args.graph_feats)
-    model = MVGT_iSL(args.hidden_size, args.embed_size, args.heads, args.n_layers,
+    model = MLEC_iSL(args.hidden_size, args.embed_size, args.heads, args.n_layers,
                 num_CCLE=num_CCLE,
                 num_network=num_network, 
                 cell_specific_flag=args.cell_specific_flag,
